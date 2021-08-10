@@ -107,11 +107,11 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+    .then((updatedProductTags) => res.status(200).json(updatedProductTags))
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
 
 router.delete('/:id', async (req, res) => {
